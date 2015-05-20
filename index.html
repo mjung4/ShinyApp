@@ -43,72 +43,86 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Challenge</h2>
+    <h2>Shiny Application &quot;Analyse Mtcars&quot;</h2>
   </hgroup>
   <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
+    <p>The Application &quot;Analyse Mtcars&quot; helps to analyse the  &quot;Motor Trend Car Road Tests&quot; dataset (mtcars).</p>
 
-<slide class="class" id="id" style="background:;">
-  <hgroup>
-    <h2>Details</h2>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
+<p>Functionality:</p>
 
-<slide class="class" id="id" style="background:;">
-  <hgroup>
-    <h2>Dataset Motorcars</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
-<li>embedded R code that gets run when slidifying the document</li>
+<ul>
+<li>web based</li>
+<li>interactive: you choose which attributes you want to analyse</li>
+<li>nice &quot;Scatterplot Matrices&quot;</li>
+<li>possibility to build a simple linear model for mpg</li>
+<li>embedded detailed documentation</li>
+<li>for free</li>
 </ul>
 
-<p>Let us create a simple scatterplot.</p>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<pre><code class="r">require(ggplot2)
-qplot(wt, mpg, data = mtcars)
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example for choosen attributes hp and wt</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The Scatterplot Matrices show the correlation between the choosen variables. For the Transmission (am) there are different colors used. Green are the cars with automatic transmission, blue the cars with manual transmission. </p>
+
+<pre><code class="r">pairs(mtcars[,c(&quot;mpg&quot;, &quot;hp&quot;, &quot;wt&quot;)], panel = panel.smooth,
+                       col = 3 + mtcars$am)
 </code></pre>
 
 <p><img src="assets/fig/simple-plot-1.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto auto auto 0;" /></p>
 
+<p>Linear model:
+fit &lt;- mpg ~ hp + wt</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Linear Modell</h2>
+    <h2>Prospects</h2>
   </hgroup>
   <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="class" id="id" style="background:;">
-  <hgroup>
-    <h2>Summary</h2>
-  </hgroup>
-  <article data-timings="">
-    <ol>
-<li>Some form of input (widget: textbox, radio button, checkbox, ...)</li>
-<li>Some operation on the ui input in sever.R</li>
-<li>Some reactive output displayed as a result of server calculations</li>
-<li>documentation on the shiny site</li>
-</ol>
+    <p>The following features are in planning for the next releases:</p>
 
 <ul>
-<li>Shiny App: <a href="https://code.google.com/p/io-2012-slides/">https://code.google.com/p/io-2012-slides/</a></li>
-<li>ui.R: <a href="https://code.google.com/p/io-2012-slides/">https://code.google.com/p/io-2012-slides/</a></li>
-<li>Server.R: <a href="https://code.google.com/p/io-2012-slides/">https://code.google.com/p/io-2012-slides/</a></li>
-<li>These Slides: <a href="https://code.google.com/p/html5slides/">https://code.google.com/p/html5slides/</a></li>
+<li>load your own dataset for the analyse</li>
+<li>possibility to change the type of variables in factors</li>
+<li>selection of different plots</li>
+<li>choose the variable for which you want to build a linear model</li>
+<li>predictive Analysis based on the linear model</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Links</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Shiny Application &quot;Analysis Mtcars&quot; </p>
+
+<ul>
+<li><a href="https://mjung4.shinyapps.io/Analysis_Mtcars/">https://mjung4.shinyapps.io/Analysis_Mtcars/</a></li>
+</ul>
+
+<p>Code on my github Account:</p>
+
+<ul>
+<li><a href="https://github.com/mjung4/ShinyAppCode">https://github.com/mjung4/ShinyAppCode</a> </li>
+</ul>
+
+<p>These Slides on my github Account:</p>
+
+<ul>
+<li><a href="http://mjung4.github.io/ShinyApp/index.html">http://mjung4.github.io/ShinyApp/index.html</a> </li>
 </ul>
 
 <p>Note: These slides are done with Slidify. 
@@ -124,32 +138,26 @@ Slidify was created by <a href="https://github.com/ramnathv">Ramnath Vaidyanatha
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Challenge'>
+        data-slide=1 title='Shiny Application &quot;Analyse Mtcars&quot;'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Details'>
+        data-slide=2 title='Example for choosen attributes hp and wt'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Dataset Motorcars'>
+        data-slide=3 title='Prospects'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Linear Modell'>
+        data-slide=4 title='Links'>
          4
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Summary'>
-         5
       </a>
     </li>
   </ul>

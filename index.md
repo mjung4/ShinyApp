@@ -11,45 +11,60 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Challenge
+## Shiny Application "Analyse Mtcars"
+
+The Application "Analyse Mtcars" helps to analyse the  "Motor Trend Car Road Tests" dataset (mtcars).
+
+Functionality:
+- web based
+- interactive: you choose which attributes you want to analyse
+- nice "Scatterplot Matrices"
+- possibility to build a simple linear model for mpg
+- embedded detailed documentation
+- for free
 
 --- .class #id 
 
-## Details
+## Example for choosen attributes hp and wt
 
---- .class #id
-
-## Dataset Motorcars
-- embedded R code that gets run when slidifying the document
-
-Let us create a simple scatterplot.
-
+The Scatterplot Matrices show the correlation between the choosen variables. For the Transmission (am) there are different colors used. Green are the cars with automatic transmission, blue the cars with manual transmission. 
 
 ```r
-require(ggplot2)
-qplot(wt, mpg, data = mtcars)
+pairs(mtcars[,c("mpg", "hp", "wt")], panel = panel.smooth,
+                       col = 3 + mtcars$am)
 ```
 
 <img src="assets/fig/simple-plot-1.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto auto auto 0;" />
 
+Linear model:
+fit <- mpg ~ hp + wt
+
 --- .class #id
 
-##  Linear Modell
+##  Prospects
+
+The following features are in planning for the next releases:
+- load your own dataset for the analyse
+- possibility to change the type of variables in factors
+- selection of different plots
+- choose the variable for which you want to build a linear model
+- predictive Analysis based on the linear model
 
 --- .class #id
 
-## Summary
+## Links
 
-1. Some form of input (widget: textbox, radio button, checkbox, ...)
-2. Some operation on the ui input in sever.R
-3. Some reactive output displayed as a result of server calculations
-4. documentation on the shiny site
+Shiny Application "Analysis Mtcars" 
+- https://mjung4.shinyapps.io/Analysis_Mtcars/
 
-- Shiny App: https://code.google.com/p/io-2012-slides/
-- ui.R: https://code.google.com/p/io-2012-slides/
-- Server.R: https://code.google.com/p/io-2012-slides/
-- These Slides: https://code.google.com/p/html5slides/
+Code on my github Account:
+- https://github.com/mjung4/ShinyAppCode 
 
+These Slides on my github Account:
+- http://mjung4.github.io/ShinyApp/index.html 
+         
+              
+                  
 Note: These slides are done with Slidify. 
 Slidify was created by [Ramnath Vaidyanathan](https://github.com/ramnathv) in order to streamline the process of creating and publishing `R` driven presentations.
 
