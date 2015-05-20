@@ -11,9 +11,9 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Shiny Application "Analyse Mtcars"
+## Shiny Application "Analysis Mtcars"
 
-The Application "Analyse Mtcars" helps to analyse the  "Motor Trend Car Road Tests" dataset (mtcars).
+The Application "Analysis Mtcars" helps to analyse the  "Motor Trend Car Road Tests" dataset (mtcars).
 
 Functionality:
 - web based
@@ -36,7 +36,7 @@ pairs(mtcars[,c("mpg", "hp", "wt")], panel = panel.smooth,
 
 <img src="assets/fig/simple-plot-1.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto auto auto 0;" />
 
-Linear model:
+Linear model for the choosen Attributes:
 fit <- mpg ~ hp + wt
 
 --- .class #id
